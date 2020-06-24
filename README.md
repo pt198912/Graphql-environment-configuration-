@@ -71,3 +71,14 @@
                   Log.d(TAG, "apollo onFailure: ");
               }
           });
+          
+ 
+ 6.对于graphql中的scalar自定义数据类型的处理
+ 
+    在app的build.gradle中添加自定义customTypeAdapter,如下代码
+        apollo {
+            customTypeMapping = [
+                    "TimeStamp" : "java.lang.Long",
+                    "Long" : "java.lang.String"
+            ]
+        }
